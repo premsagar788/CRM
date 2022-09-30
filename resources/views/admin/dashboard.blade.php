@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('admin.layout')
 
 @section('content')
     <!-- Begin Page Content -->
