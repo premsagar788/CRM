@@ -28,3 +28,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
 Route::get('/admin/clients', [App\Http\Controllers\ClientsController::class, 'index']);
+
+Route::get('/admin/clients/add', [App\Http\Controllers\ClientsController::class, 'addClient']);
+
+Route::post('/admin/clients/add', [App\Http\Controllers\ClientsController::class, 'addClientSave']);
+
+

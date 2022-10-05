@@ -12,4 +12,16 @@ class ClientsController extends Controller
     	$clients = Client::all();
     	return view('admin.clients')->with(compact('clients'));
     }
+
+    public function addClient(Request $request)
+    {
+    	return view('admin.addclient');
+    }
+
+    public function addClientSave(Request $request)
+    {
+    	$data = $request->all();
+    }
+
+    
 }
