@@ -31,7 +31,8 @@ class AddLeadRequest extends FormRequest
             'website'       => 'required|string',
             'phone'         => 'required|integer',
             'country'       => 'required|string',
-            'description'   => 'required|string'
+            'description'   => 'required|string',
+            'status'        => 'required|string'
         ];
     }
 
@@ -41,12 +42,12 @@ class AddLeadRequest extends FormRequest
             'name.required'         => 'Client name is required',
             'company_name.required' => 'Company name is required',
             'source.required'       => 'Source is required',
-            'budget.required'       => 'Budgetl is required',
+            'budget.required'       => 'Budget is required',
             'website.required'      => 'Website is required',
             'phone.required'        => 'Phone number is required',
             'state.required'        => 'Client state is required',
             'country.required'      => 'Client country is required',
-            'description.required'  => 'Description is required'
+            'description.required'  => 'Description is required',
         ];
     }
 }

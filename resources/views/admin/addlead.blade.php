@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        <!-- Clients add form start -->
+        <!-- Add Lead form start -->
         <div class="card shadow mb-4 pt-5 pb-5 pl-2 pr-2 bg-light">
             <div class="col col-lg-12 col-md-12 col-sm-12">
                 <form method="post" action="{{ url('/admin/leads/add') }}">
@@ -76,12 +76,24 @@
                             </div>
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select name="status" class="form-control">
+                                    <option value="New Opportunity">New Opportunity</option>
+                                    <option value="Interested">Interested</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Contacted">Contacted</option>
+                                    <option value="Attempted">Attempted</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-lg-12 col-md-12 col-sm-12">
                             <input type="submit" name="submit" class="btn btn-primary" value="Save">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <!-- Clients add form end -->
+        <!-- Add Lead form end -->
     </div>
 @endsection

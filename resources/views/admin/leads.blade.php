@@ -2,7 +2,6 @@
 
 @section('title', 'Leads')
 
-
 @section('content')
 <style type="text/css">
     div.dataTables_wrapper div.dataTables_filter label {
@@ -37,9 +36,6 @@ div.dataTables_wrapper div.dataTables_length select {
     width: auto;
     display: inline-block;
 }
-
-</style>
-
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -51,8 +47,8 @@ div.dataTables_wrapper div.dataTables_length select {
             </a>
         </div>
 
-        @if (Session::has('success'))
-           <div class="alert alert-info">{{ Session::get('success') }}</div>
+        @if (Session::has('message'))
+           <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
         <!-- Clients list -->
@@ -77,18 +73,18 @@ div.dataTables_wrapper div.dataTables_length select {
                         <tbody>
                             @foreach($leads as $lead)
                             <tr>
-                                <td>{{ $client->name }}</td>
-                                <td>{{ $client->company_name }}</td>
-                                <td>{{ $client->source }}</td>
-                                <td>{{ $client->budget }}</td>
-                                <td>{{ $client->website }}</td>
-                                <td>{{ $client->phone }}</td>
-                                <td>{{ $client->country }}</td>
-                                <td>{{ $client->description }}</td>
-                                <td>{{ $client->status }}</td>
+                                <td>{{ $lead->name }}</td>
+                                <td>{{ $lead->company_name }}</td>
+                                <td>{{ $lead->source }}</td>
+                                <td>{{ $lead->budget }}</td>
+                                <td>{{ $lead->website }}</td>
+                                <td>{{ $lead->phone }}</td>
+                                <td>{{ $lead->country }}</td>
+                                <td>{{ $lead->description }}</td>
+                                <td>{{ $lead->status }}</td>
                                 <td>
-                                    <a href="{{ url('/admin/clients/edit/'.$client->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ url('/admin/clients/delete/'.$client->id) }}" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('/admin/clients/edit/'.$lead->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ url('/admin/clients/delete/'.$lead->id) }}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
