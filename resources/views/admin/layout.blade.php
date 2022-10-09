@@ -58,7 +58,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ url('admin/clients') }}">Clients</a>
-                        <a class="collapse-item" href="cards.html">Add Client</a>
+                        <a class="collapse-item" href="{{ url('admin/clients/add') }}">Add Client</a>
                     </div>
                 </div>
             </li>
@@ -394,12 +394,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+    @yield('scripts')
 
 </body>
 
