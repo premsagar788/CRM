@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Clients')
+@section('title', 'Leads')
 
 <style type="text/css">
     div.dataTables_wrapper div.dataTables_filter label {
@@ -43,9 +43,9 @@ div.dataTables_wrapper div.dataTables_length select {
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-            <a href="{{ url('admin/clients/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                <i class="fas fa-plus fa-sm text-white-50"></i> Add Client
+            <h1 class="h3 mb-0 text-gray-800">Leads</h1>
+            <a href="{{ url('admin/leads/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i> Add Lead
             </a>
         </div>
 
@@ -61,27 +61,29 @@ div.dataTables_wrapper div.dataTables_length select {
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Company Name</th>
+                                <th>Source</th>
+                                <th>Budget</th>
                                 <th>Website</th>
                                 <th>Phone</th>
-                                <th>Email</th>
-                                <th>Street</th>
-                                <th>City</th>
-                                <th>State</th>
                                 <th>Country</th>
+                                <th>Description</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($clients as $client)
+                            @foreach($leads as $lead)
                             <tr>
                                 <td>{{ $client->name }}</td>
+                                <td>{{ $client->company_name }}</td>
+                                <td>{{ $client->source }}</td>
+                                <td>{{ $client->budget }}</td>
                                 <td>{{ $client->website }}</td>
                                 <td>{{ $client->phone }}</td>
-                                <td>{{ $client->email }}</td>
-                                <td>{{ $client->street }}</td>
-                                <td>{{ $client->city }}</td>
-                                <td>{{ $client->state }}</td>
                                 <td>{{ $client->country }}</td>
+                                <td>{{ $client->description }}</td>
+                                <td>{{ $client->status }}</td>
                                 <td>
                                     <a href="{{ url('/admin/clients/edit/'.$client->id) }}" class="btn btn-primary">Edit</a>
                                     <a href="{{ url('/admin/clients/delete/'.$client->id) }}" class="btn btn-danger">Delete</a>

@@ -50,15 +50,30 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Clients"
+                    aria-expanded="true" aria-controls="Clients">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Clients</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="Clients" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ url('admin/clients') }}">Clients</a>
                         <a class="collapse-item" href="{{ url('admin/clients/add') }}">Add Client</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Leads"
+                    aria-expanded="true" aria-controls="Leads">
+                    <i class="fas fa-fw fa-bullhorn "></i>
+                    <span>Leads</span>
+                </a>
+                <div id="Leads" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ url('admin/leads') }}">Leads</a>
+                        <a class="collapse-item" href="{{ url('admin/leads/add') }}">Add Lead</a>
                     </div>
                 </div>
             </li>
