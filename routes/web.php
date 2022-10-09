@@ -33,4 +33,3 @@ Route::get('/admin/clients/add', [App\Http\Controllers\ClientsController::class,
 
 Route::post('/admin/clients/add', [App\Http\Controllers\ClientsController::class, 'addClientSave']);
 
-
