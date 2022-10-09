@@ -32,3 +32,9 @@ Route::controller(App\Http\Controllers\ClientsController::class)->group(function
     Route::get('/admin/clients/add', 'addClient');
     Route::post('/admin/clients/add', 'addClientSave');
 });
+
+Route::controller(App\Http\Controllers\LeadsController::class)->group(function () {
+    Route::get('/admin/leads', 'index');
+    Route::get('/admin/leads/add', 'addLead');
+    Route::post('/admin/leads/add', 'addLeadSave');
+});

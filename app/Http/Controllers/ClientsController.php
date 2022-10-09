@@ -15,7 +15,7 @@ class ClientsController extends Controller
     	return view('admin.clients')->with(compact('clients'));
     }
 
-    public function addClient(Request $request)
+    public function addClient()
     {
     	return view('admin.addclient');
     }
