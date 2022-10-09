@@ -8,7 +8,7 @@
 </ul>
 
 <hr>
-<h1>Installation</h1>
+<h2>Installation</h2>
 <p>To install this application on your local system, you should have XAMPP and github client installed.</p>
 <h5><b>Step 1:</b></h5>
 <p>In your local system navigate to {your xampp installation directory}/htdocs/crm (create this folder)</p>
