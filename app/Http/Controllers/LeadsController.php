@@ -29,15 +29,15 @@ class LeadsController extends Controller
             $lead->name       	= $data['name']; 
             $lead->company_name	= $data['company_name'];
             $lead->source      	= $data['source'];
-            $lead->status      	= 'Not attempted';
             $lead->budget     	= $data['budget'];
             $lead->website     	= $data['website'];
             $lead->phone      	= $data['phone'];
             $lead->country    	= $data['country'];
             $lead->description 	= $data['description'];
+            $lead->status       = $data['status'];
             $lead->save();
 
-            return redirect('/admin/leads')->with('success', 'Lead added successfully!');
+            return redirect('/admin/leads')->with('message', 'Lead added successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('errors', $e->getMessage());
         }
