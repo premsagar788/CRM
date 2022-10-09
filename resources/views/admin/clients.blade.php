@@ -41,12 +41,12 @@ div.dataTables_wrapper div.dataTables_length select {
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Clients</h1>
-            <a href="{{ url('admin/clients/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-plus fa-sm text-white-50"></i> Add Client</a>
+            <a href="{{ url('admin/clients/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i> Add Client
+            </a>
         </div>
 
         @if (Session::has('success'))
