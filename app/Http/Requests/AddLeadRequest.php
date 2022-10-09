@@ -48,6 +48,7 @@ class AddLeadRequest extends FormRequest
             'state.required'        => 'Client state is required',
             'country.required'      => 'Client country is required',
             'description.required'  => 'Description is required',
+            'status.required'       => 'Lead Status is required'
         ];
     }
 }
