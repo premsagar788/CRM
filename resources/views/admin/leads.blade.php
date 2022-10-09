@@ -2,6 +2,7 @@
 
 @section('title', 'Leads')
 
+
 @section('content')
 <style type="text/css">
     div.dataTables_wrapper div.dataTables_filter label {
