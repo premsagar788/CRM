@@ -38,14 +38,14 @@ class AddClientRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Client name is required',
-            'website.required' => 'Client website is required',
-            'phone.required' => 'Client Phone number is required',
-            'email.required' => 'Client email is required',
-            'street.required' => 'Client street is required',
-            'city.required' => 'Client city is required',
-            'state.required' => 'Client state is required',
-            'country.required' => 'Client country is required',
+            'name.required'     => 'Client name is required',
+            'website.required'  => 'Client website is required',
+            'phone.required'    => 'Client Phone number is required',
+            'email.required'    => 'Client email is required',
+            'street.required'   => 'Client street is required',
+            'city.required'     => 'Client city is required',
+            'state.required'    => 'Client state is required',
+            'country.required'  => 'Client country is required',
         ];
     }
 }
