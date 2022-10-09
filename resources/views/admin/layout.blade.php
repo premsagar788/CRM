@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('admin/dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -42,14 +42,14 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item @if (request()->is('admin/dashboard')) active @endif">
+                <a class="nav-link" href="{{ url('admin/dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item @if (request()->is('admin/clients*')) active @endif">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Clients"
                     aria-expanded="true" aria-controls="Clients">
                     <i class="fas fa-fw fa-user"></i>
@@ -64,7 +64,7 @@
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item @if (request()->is('admin/leads*')) active @endif">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Leads"
                     aria-expanded="true" aria-controls="Leads">
                     <i class="fas fa-fw fa-bullhorn "></i>
