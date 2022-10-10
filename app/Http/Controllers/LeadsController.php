@@ -22,7 +22,7 @@ class LeadsController extends Controller
 
     public function addLeadSave(AddLeadRequest $request)
     {
-    	$data = $request->all();
+    	$data = $request->validated();
 
         try {
             $lead = new Lead();
