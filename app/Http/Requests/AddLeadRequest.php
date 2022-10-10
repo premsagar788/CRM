@@ -23,6 +23,7 @@ class AddLeadRequest extends FormRequest
      */
     public function rules()
     {
+        $status = ['New Opportunity', 'Interested', 'In Progress', 'Contacted', 'Attempted'];
         return [
             'name'          => 'required|string',
             'company_name'  => 'required|string',
@@ -32,7 +33,7 @@ class AddLeadRequest extends FormRequest
             'phone'         => 'required|integer',
             'country'       => 'required|string',
             'description'   => 'required|string',
-            'status'        => 'required|string'
+            'status'        => Rule::in($status)
         ];
     }
 
