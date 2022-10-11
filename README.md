@@ -14,5 +14,6 @@
 <p>In your local system navigate to {your xampp installation directory}/htdocs/crm (create this folder)</p>
 <p>Click on Code->Open with Github Desktop or you can also clone it using SSH/Github CLI</p>
 <p>After cloning, create a database in phpMyadmin crm</p>
-<p>Then run this command:</p>
-<code>php artisan migrate
+<p>Then run these commands:</p>
+<code>composer install</code>
+<code>php artisan migrate</code>
