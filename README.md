@@ -16,5 +16,7 @@
 <p>After cloning, create a database in phpMyadmin crm</p>
 <p>Then run these commands:</p>
 <code>composer install</code>
-<br>
-<code>php artisan migrate</code>
+<hr>
+<a href="https://www.buymeacoffee.com/premsagar">
+	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"> Support me so I can continue working on these projects.
+</a>
