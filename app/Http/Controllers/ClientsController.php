@@ -22,7 +22,7 @@ class ClientsController extends Controller
 
     public function addClientSave(AddClientRequest $request)
     {
-    	$data = $request->all();
+    	$data = $request->validated();
 
         try {
             $client = new Client();
