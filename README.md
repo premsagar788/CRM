@@ -19,5 +19,5 @@
 <hr>
 <p>Support me so I can continue working on these projects.</p>
 <a href="https://www.buymeacoffee.com/premsagar">
-	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"> Support me so I can continue working on these projects.
+	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">
 </a>
