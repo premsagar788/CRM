@@ -20,6 +20,6 @@
 <code>php artisan migrate</code>
 <hr>
 <p>Support me so I can continue working on these projects.</p>
-<a href="https://www.buymeacoffee.com/premsagar">
+<a href="https://www.buymeacoffee.com/premsagar" target=_blank>
 	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">
 </a>
