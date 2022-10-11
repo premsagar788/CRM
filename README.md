@@ -16,4 +16,5 @@
 <p>After cloning, create a database in phpMyadmin crm</p>
 <p>Then run these commands:</p>
 <code>composer install</code>
+<br>
 <code>php artisan migrate</code>
