@@ -21,20 +21,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
 Route::controller(App\Http\Controllers\ClientsController::class)->group(function () {
     Route::get('/admin/clients', 'index');
     Route::get('/admin/clients/add', 'addClient');
     Route::post('/admin/clients/add', 'addClientSave');
+    Route::get('/admin/clients/edit/{id}', 'editClientView');
+    Route::post('/admin/clients/update/{id}', 'editClientSave');
 });
 
 Route::controller(App\Http\Controllers\LeadsController::class)->group(function () {
     Route::get('/admin/leads', 'index');
     Route::get('/admin/leads/add', 'addLead');
     Route::post('/admin/leads/add', 'addLeadSave');
+    Route::get('/admin/leads/edit/{id}', 'editLeadView');
+    Route::post('/admin/leads/update/{id}', 'editLeadSave');
 });
