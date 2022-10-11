@@ -49,8 +49,8 @@
                                 <td>{{ $lead->description }}</td>
                                 <td>{{ $lead->status }}</td>
                                 <td>
-                                    <a href="{{ url('/admin/clients/edit/'.$lead->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ url('/admin/clients/delete/'.$lead->id) }}" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('/admin/leads/edit/'.$lead->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ url('/admin/leads/delete/'.$lead->id) }}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

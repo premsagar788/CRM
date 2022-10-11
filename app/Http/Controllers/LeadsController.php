@@ -42,4 +42,28 @@ class LeadsController extends Controller
             return redirect()->back()->with('errors', $e->getMessage());
         }
     }
+
+    public function editLeadView($id)
+    {
+        $lead = Lead::findOrFail($id);
+        return view('admin.update-lead')->with(compact('lead'));
+    }
+
+    public function editLeadSave(UpdateClientRequest $request, $id)
+    {
+        $data = $request->validated();
+
+        $lead = Lead::findOrFail($id);
+
+        $lead->name       = $data['name']; 
+        $lead->website    = $data['website'];
+        $lead->phone      = $data['phone'];
+        $lead->email      = $data['email'];
+        $lead->street     = $data['street'];
+        $lead->city       = $data['city'];
+        $lead->state      = $data['state'];
+        $lead->country    = $data['country'];
+        $lead->save();
+        return redirect('/admin/leads')->with('success', 'Lead updated successfully!');
+    }
 }
