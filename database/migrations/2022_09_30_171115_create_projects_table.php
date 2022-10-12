@@ -18,7 +18,8 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->integer('client')->unsigned();
             $table->unsignedSmallInteger('phone')->unsigned();
-            $table->enum('billing_type', ['Attempted', 'Fixed Rate', 'Project Hours', 'Task Hours']);
+            $table->enum('billing_type', ['Fixed Rate', 'Project Hours', 'Task Hours']);
+            $table->enum('status', ['On Hold', 'Not Started', 'In Progress', 'Finished', 'Cancelled']);
             $table->string('estimated_time', 11);
             $table->date('start_date');
             $table->date('deadline');
