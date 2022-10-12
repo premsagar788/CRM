@@ -13,11 +13,13 @@
 <h5><b>Step 1:</b></h5>
 <p>In your local system navigate to {your xampp installation directory}/htdocs/crm (create this folder)</p>
 <p>Click on Code->Open with Github Desktop or you can also clone it using SSH/Github CLI</p>
-<p>After cloning, create a database in phpMyadmin crm</p>
+<p>After cloning, create a database in phpMyadmin named: crm (or any name of your choice)</p>
 <p>Then run these commands:</p>
 <code>composer install</code>
+<br>
+<code>php artisan migrate</code>
 <hr>
 <p>Support me so I can continue working on these projects.</p>
-<a href="https://www.buymeacoffee.com/premsagar">
+<a href="https://www.buymeacoffee.com/premsagar" target=_blank>
 	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">
 </a>

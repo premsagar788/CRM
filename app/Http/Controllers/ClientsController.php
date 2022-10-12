@@ -66,6 +66,13 @@ class ClientsController extends Controller
         return redirect('/admin/clients')->with('success', 'Client updated successfully!');
     }
 
+    public function deleteClient($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->delete();
+        return redirect('/admin/clients')->with('success', 'Client deleted successfully!');
+    }
+
     
 
 }
