@@ -29,6 +29,7 @@ Route::controller(App\Http\Controllers\ClientsController::class)->group(function
     Route::post('/admin/clients/add', 'addClientSave');
     Route::get('/admin/clients/edit/{id}', 'editClientView');
     Route::post('/admin/clients/update/{id}', 'editClientSave');
+    Route::get('/admin/clients/delete/{id}', 'deleteClient');
 });
 
 Route::controller(App\Http\Controllers\LeadsController::class)->group(function () {
@@ -37,4 +38,5 @@ Route::controller(App\Http\Controllers\LeadsController::class)->group(function (
     Route::post('/admin/leads/add', 'addLeadSave');
     Route::get('/admin/leads/edit/{id}', 'editLeadView');
     Route::post('/admin/leads/update/{id}', 'editLeadSave');
+    Route::get('/admin/leads/delete/{id}', 'deleteLead');
 });
