@@ -37,7 +37,7 @@ class LeadsController extends Controller
             $lead->status       = $data['status'];
             $lead->save();
 
-            return redirect('/admin/leads')->with('message', 'Lead added successfully!');
+            return redirect('/admin/leads')->with('success', 'Lead added successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('errors', $e->getMessage());
         }
@@ -66,4 +66,15 @@ class LeadsController extends Controller
         $lead->save();
         return redirect('/admin/leads')->with('success', 'Lead updated successfully!');
     }
+
+    public function deleteLead($id)
+    {
+        $lead = Lead::findOrFail($id);
+        $lead->delete();
+        return redirect('/admin/leads')->with('success', 'Lead deleted successfully!');
+    }
+
+
+
+    
 }
