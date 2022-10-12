@@ -13,8 +13,8 @@
             </a>
         </div>
 
-        @if (Session::has('message'))
-           <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @if (Session::has('success'))
+           <div class="alert alert-info">{{ Session::get('success') }}</div>
         @endif
 
         <!-- Clients list -->
