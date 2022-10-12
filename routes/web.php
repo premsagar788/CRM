@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
-Route::controller(App\Http\Controllers\ClientsController::class)->group(function () {
+Route::controller(App\Http\Controllers\ClientsController::class)->middleware('auth')->group(function () {
     Route::get('/admin/clients', 'index');
     Route::get('/admin/clients/add', 'addClient');
     Route::post('/admin/clients/add', 'addClientSave');
@@ -32,7 +32,7 @@ Route::controller(App\Http\Controllers\ClientsController::class)->group(function
     Route::get('/admin/clients/delete/{id}', 'deleteClient');
 });
 
-Route::controller(App\Http\Controllers\LeadsController::class)->group(function () {
+Route::controller(App\Http\Controllers\LeadsController::class)->middleware('auth')->group(function () {
     Route::get('/admin/leads', 'index');
     Route::get('/admin/leads/add', 'addLead');
     Route::post('/admin/leads/add', 'addLeadSave');
