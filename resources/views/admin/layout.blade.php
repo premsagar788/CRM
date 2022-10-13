@@ -78,6 +78,21 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item @if (request()->is('admin/projects*')) active @endif">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Projects"
+                    aria-expanded="true" aria-controls="Projects">
+                    <i class="fas fa-fw fa-project-diagram"></i>
+                    <span>Projects</span>
+                </a>
+                <div id="Projects" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ url('admin/projects') }}">Projects</a>
+                        <a class="collapse-item" href="{{ url('admin/projects/add') }}">Add Project</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
