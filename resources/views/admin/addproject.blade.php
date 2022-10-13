@@ -92,7 +92,6 @@
                                 <textarea class="form-control form-control" name="description" placeholder="Enter description"></textarea>
                             </div>
                         </div>
-                        
                         <div class="col col-lg-12 col-md-12 col-sm-12">
                             <input type="submit" name="submit" class="btn btn-primary" value="Save">
                         </div>
