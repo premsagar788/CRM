@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use \Exception;
 use App\Models\Lead;
-use Illuminate\Http\Request;
 use App\Http\Requests\AddLeadRequest;
 use App\Http\Requests\UpdateLeadRequest;
 
