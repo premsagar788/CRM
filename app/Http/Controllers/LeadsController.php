@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use \Exception;
 use App\Models\Lead;
-use App\Http\Requests\AddLeadRequest;
+use App\Http\Requests\AddProjectRequest;
 use App\Http\Requests\UpdateLeadRequest;
 
 class LeadsController extends Controller
@@ -20,7 +20,7 @@ class LeadsController extends Controller
     	return view('admin.addlead');
     }
 
-    public function addLeadSave(AddLeadRequest $request)
+    public function addLeadSave(AddProjectRequest $request)
     {
     	$data = $request->validated();
 
