@@ -35,26 +35,8 @@
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
-                                <label for="name">Company Name</label>
-                                <input type="text" class="form-control form-control" name="company_name" placeholder="Enter company name">
-                            </div>
-                        </div>
-                        <div class="col col-lg-6 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <label for="name">Source</label>
-                                <input type="text" class="form-control form-control" name="source" placeholder="Enter source">
-                            </div>
-                        </div>
-                        <div class="col col-lg-6 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <label for="name">Budget</label>
-                                <input type="text" class="form-control form-control" name="budget" placeholder="Enter budget">
-                            </div>
-                        </div>
-                        <div class="col col-lg-6 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <label for="name">Website</label>
-                                <input type="text" class="form-control form-control" name="website" placeholder="Enter website" >
+                                <label for="name">Client</label>
+                                <input type="text" class="form-control form-control" name="client" placeholder="Enter company name">
                             </div>
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
@@ -65,26 +47,49 @@
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
-                                <label for="name">Country</label>
-                                <input type="text" class="form-control form-control" name="country" placeholder="Enter country">
-                            </div>
-                        </div>
-                        <div class="col col-lg-6 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <label for="name">Description</label>
-                                <input type="text" class="form-control form-control" name="description" placeholder="Enter description">
+                                <label for="name">Billing type</label>
+                                <select name="billing_type" class="form-control">
+                                    <option value="Fixed Rate">Fixed Rate</option>
+                                    <option value="Project Hours">Project Hours</option>
+                                    <option value="Task Hours">Task Hours</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label for="status">Status</label>
                                 <select name="status" class="form-control">
-                                    <option value="New Opportunity">New Opportunity</option>
-                                    <option value="Interested">Interested</option>
+                                    <option value="On Hold">On Hold</option>
+                                    <option value="Not Started">Not Started</option>
                                     <option value="In Progress">In Progress</option>
-                                    <option value="Contacted">Contacted</option>
-                                    <option value="Attempted">Attempted</option>
+                                    <option value="Finished">Finished</option>
+                                    <option value="Cancelled">Cancelled</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="estimated_time">Estimated Time</label>
+                                <input type="text" class="form-control form-control" name="estimated_time" placeholder="Enter estimated time (in days)">
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="start_date">Start Date</label>
+                                <input type="date" class="form-control form-control" name="start_date" placeholder="Enter start date" >
+                            </div>
+                        </div>
+                        
+                        <div class="col col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="deadline">Deadline</label>
+                                <input type="date" class="form-control form-control" name="deadline" placeholder="Enter deadline" >
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Description</label>
+                                <textarea class="form-control form-control" name="description" placeholder="Enter description"></textarea>
                             </div>
                         </div>
                         <div class="col col-lg-12 col-md-12 col-sm-12">
