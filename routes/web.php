@@ -43,8 +43,8 @@ Route::controller(App\Http\Controllers\LeadsController::class)->middleware('auth
 
 Route::controller(App\Http\Controllers\ProjectsController::class)->middleware('auth')->group(function () {
     Route::get('/admin/projects', 'index');
-    Route::get('/admin/projects/add', 'addLead');
-    Route::post('/admin/projects/add', 'addLeadSave');
+    Route::get('/admin/projects/add', 'addProject');
+    Route::post('/admin/projects/add', 'addProjectSave');
     Route::get('/admin/projects/edit/{id}', 'editLeadView');
     Route::post('/admin/projects/update/{id}', 'editLeadSave');
     Route::get('/admin/projects/delete/{id}', 'deleteLead');
