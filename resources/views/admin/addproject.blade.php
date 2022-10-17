@@ -11,7 +11,7 @@
             <h1 class="h3 mb-0 text-gray-800">Add Project</h1>
         </div>
 
-        @if ($errors->any())
+        <!-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -19,6 +19,9 @@
                     @endforeach
                 </ul>
             </div>
+        @endif -->
+        @if ($error)
+            <p>{{$error}}</p>
         @endif
 
         <!-- Add Lead form start -->
