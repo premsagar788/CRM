@@ -48,4 +48,30 @@ class ProjectsController extends Controller
         $project = Project::findOrFail($id);
         return view('admin.update-project')->with(compact('project'));
     }
+
+    public function editProjectSave(UpdateLeadRequest $request, $id)
+    {
+        $data = $request->validated();
+
+        $project = Project::findOrFail($id);
+
+        $project->name         = $data['name']; 
+        $project->company_name = $data['company_name'];
+        $project->source       = $data['source'];
+        $project->budget       = $data['budget'];
+        $project->website      = $data['website'];
+        $project->phone        = $data['phone'];
+        $project->country      = $data['country'];
+        $project->description  = $data['description'];
+        $project->status       = $data['status'];
+        $project->save();
+        return redirect('/admin/leads')->with('success', 'Project updated successfully!');
+    }
+
+    public function deleteLead($id)
+    {
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect('/admin/leads')->with('success', 'Project deleted successfully!');
+    }
 }

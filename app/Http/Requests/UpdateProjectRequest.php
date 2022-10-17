@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLeadRequest extends FormRequest
+class UpdateProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -41,14 +41,14 @@ class UpdateLeadRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'         => 'Lead name is required',
+            'name.required'         => 'Project name is required',
             'company_name.required' => 'Company name is required',
             'source.required'       => 'Source is required',
             'budget.required'       => 'Budget is required',
             'website.required'      => 'Website is required',
             'phone.required'        => 'Phone number is required',
-            'state.required'        => 'Lead state is required',
-            'country.required'      => 'Lead country is required',
+            'state.required'        => 'Project state is required',
+            'country.required'      => 'Project country is required',
             'description.required'  => 'Description is required',
             'status.required'       => 'Lead Status is required'
         ];
