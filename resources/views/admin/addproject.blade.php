@@ -11,7 +11,7 @@
             <h1 class="h3 mb-0 text-gray-800">Add Project</h1>
         </div>
 
-        @if ($errors->any())
+        <!-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -19,12 +19,15 @@
                     @endforeach
                 </ul>
             </div>
+        @endif -->
+        @if ($error)
+            <p>{{$error}}</p>
         @endif
 
         <!-- Add Lead form start -->
         <div class="card shadow mb-4 pt-5 pb-5 pl-2 pr-2 bg-light">
             <div class="col col-lg-12 col-md-12 col-sm-12">
-                <form method="post" action="{{ url('/admin/leads/add') }}">
+                <form method="post" action="{{ url('/admin/projects/add') }}">
                     @csrf
                     <div class="row">
                         <div class="col col-lg-6 col-md-12 col-sm-12">
@@ -36,7 +39,13 @@
                         <div class="col col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label for="name">Client</label>
-                                <input type="text" class="form-control form-control" name="client" placeholder="Enter company name">
+                                @if(isset($clients))
+                                    <select name="client" class="form-control">
+                                        @foreach($clients as $client)
+                                        <option>{{ $client->name }}</option>
+                                        @endforeach
+                                    </select>
+                                @endif
                             </div>
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">

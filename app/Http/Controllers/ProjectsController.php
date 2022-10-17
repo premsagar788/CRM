@@ -3,23 +3,25 @@
 namespace App\Http\Controllers;
 
 use \Exception;
+use App\Models\Client;
 use App\Models\Project;
-use Illuminate\Http\Request;
+use App\Http\Requests\AddProjectRequest;
 
 class ProjectsController extends Controller
 {
     public function index()
     {
-    	$projects = Project::all();
+    	$projects = Project::all()->pluck('name');
     	return view('admin.projects')->with(compact('projects'));
     }
 
     public function addProject()
     {
-    	return view('admin.addproject');
+    	$clients = Client::select('name')->get();
+    	return view('admin.addproject')->with(compact('clients'));
     }
 
-    public function addProjectSave(AddLeadRequest $request)
+    public function addProjectSave(AddProjectRequest $request)
     {
     	$data = $request->validated();
 
