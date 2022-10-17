@@ -11,7 +11,7 @@
             <h1 class="h3 mb-0 text-gray-800">Add Project</h1>
         </div>
 
-        <!-- @if ($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -19,9 +19,6 @@
                     @endforeach
                 </ul>
             </div>
-        @endif -->
-        @if ($error)
-            <p>{{$error}}</p>
         @endif
 
         <!-- Add Lead form start -->
@@ -33,7 +30,7 @@
                         <div class="col col-lg-6 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control form-control" name="name" placeholder="Enter lead name">
+                                <input type="text" class="form-control form-control" name="name" placeholder="Enter project name">
                             </div>
                         </div>
                         <div class="col col-lg-6 col-md-12 col-sm-12">
@@ -42,7 +39,7 @@
                                 @if(isset($clients))
                                     <select name="client" class="form-control">
                                         @foreach($clients as $client)
-                                        <option>{{ $client->name }}</option>
+                                            <option value="{{ $client->id }}">{{ $client->name }}</option>
                                         @endforeach
                                     </select>
                                 @endif
