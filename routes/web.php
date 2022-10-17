@@ -40,32 +40,32 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
-Route::middleware('auth')->group(function () {
-    Route::controller(App\Http\Controllers\ProjectsController::class)->group(function () {
-        Route::get('/admin/projects', 'index');
-        Route::get('/admin/projects/add', 'addProject');
-        Route::post('/admin/projects/add', 'addProjectSave');
-        Route::get('/admin/projects/edit/{id}', 'editLeadView');
-        Route::post('/admin/projects/update/{id}', 'editLeadSave');
-        Route::get('/admin/projects/delete/{id}', 'deleteLead');
+Route::middleware('auth')->prefix('/admin')->group(function () {
+    Route::controller(App\Http\Controllers\ProjectsController::class)->prefix('/projects')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/add', 'addProject');
+        Route::post('/add', 'addProjectSave');
+        Route::get('/edit/{id}', 'editLeadView');
+        Route::post('/update/{id}', 'editLeadSave');
+        Route::get('/delete/{id}', 'deleteLead');
     });
 
-    Route::controller(App\Http\Controllers\ClientsController::class)->group(function () {
-        Route::get('/admin/clients', 'index');
-        Route::get('/admin/clients/add', 'addClient');
-        Route::post('/admin/clients/add', 'addClientSave');
-        Route::get('/admin/clients/edit/{id}', 'editClientView');
-        Route::post('/admin/clients/update/{id}', 'editClientSave');
-        Route::get('/admin/clients/delete/{id}', 'deleteClient');
+    Route::controller(App\Http\Controllers\ClientsController::class)->prefix('/clients')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/add', 'addClient');
+        Route::post('/add', 'addClientSave');
+        Route::get('/edit/{id}', 'editClientView');
+        Route::post('/update/{id}', 'editClientSave');
+        Route::get('/delete/{id}', 'deleteClient');
     });
 
-    Route::controller(App\Http\Controllers\LeadsController::class)->group(function () {
-        Route::get('/admin/leads', 'index');
-        Route::get('/admin/leads/add', 'addLead');
-        Route::post('/admin/leads/add', 'addLeadSave');
-        Route::get('/admin/leads/edit/{id}', 'editLeadView');
-        Route::post('/admin/leads/update/{id}', 'editLeadSave');
-        Route::get('/admin/leads/delete/{id}', 'deleteLead');
+    Route::controller(App\Http\Controllers\LeadsController::class)->prefix('/leads')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/add', 'addLead');
+        Route::post('/add', 'addLeadSave');
+        Route::get('/edit/{id}', 'editLeadView');
+        Route::post('/update/{id}', 'editLeadSave');
+        Route::get('/delete/{id}', 'deleteLead');
     });
 });
 
