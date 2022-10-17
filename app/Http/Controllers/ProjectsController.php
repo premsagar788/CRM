@@ -17,7 +17,7 @@ class ProjectsController extends Controller
 
     public function addProject()
     {
-    	$clients = Client::select('name')->get();
+    	$clients = Client::select('name', 'id')->get();
     	return view('admin.addproject')->with(compact('clients'));
     }
 
@@ -26,20 +26,52 @@ class ProjectsController extends Controller
     	$data = $request->validated();
 
         try {
-            $lead = new Project();
-            $lead->name       		= $data['name']; 
-            $lead->client			= $data['client'];
-            $lead->phone      		= $data['phone'];
-            $lead->billing_type		= $data['billing_type'];
-            $lead->status       	= $data['status'];
-            $lead->estimated_time	= $data['estimated_time'];
-            $lead->start_date     	= $data['start_date'];
-            $lead->deadline    		= $data['deadline'];
-            $lead->description 		= $data['description'];
-            $lead->save();
+            $project = new Project();
+            $project->name       		= $data['name']; 
+            $project->client			= $data['client'];
+            $project->phone      		= $data['phone'];
+            $project->billing_type		= $data['billing_type'];
+            $project->status            = $data['status'];
+            $project->estimated_time	= $data['estimated_time'];
+            $project->start_date     	= $data['start_date'];
+            $project->deadline    		= $data['deadline'];
+            $project->description 		= $data['description'];
+            $project->save();
             return redirect('/admin/projects')->with('success', 'Project added successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('errors', $e->getMessage());
         }
+    }
+
+    public function editProjectView($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.update-project')->with(compact('project'));
+    }
+
+    public function editProjectSave(UpdateLeadRequest $request, $id)
+    {
+        $data = $request->validated();
+
+        $project = Project::findOrFail($id);
+
+        $project->name         = $data['name']; 
+        $project->company_name = $data['company_name'];
+        $project->source       = $data['source'];
+        $project->budget       = $data['budget'];
+        $project->website      = $data['website'];
+        $project->phone        = $data['phone'];
+        $project->country      = $data['country'];
+        $project->description  = $data['description'];
+        $project->status       = $data['status'];
+        $project->save();
+        return redirect('/admin/leads')->with('success', 'Project updated successfully!');
+    }
+
+    public function deleteLead($id)
+    {
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect('/admin/leads')->with('success', 'Project deleted successfully!');
     }
 }

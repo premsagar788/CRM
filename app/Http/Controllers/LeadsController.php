@@ -74,8 +74,5 @@ class LeadsController extends Controller
         $lead->delete();
         return redirect('/admin/leads')->with('success', 'Lead deleted successfully!');
     }
-
-
-
     
 }
