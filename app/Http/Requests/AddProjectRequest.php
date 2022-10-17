@@ -29,7 +29,7 @@ class AddProjectRequest extends FormRequest
 
         return [
             'name'              => 'required|string',
-            'client'            => 'required|string',
+            'client'            => 'required', Rule::exists(Client::class, 'id'),
             'phone'             => 'required|integer',
             'billing_type'      => Rule::in($billing_type),
             'status'            => Rule::in($status),

@@ -49,8 +49,8 @@
                                 <td>{{ $project->deadline }}</td>
                                 <td>{{ $project->description }}</td>
                                 <td>
-                                    <a href="{{ url('/admin/leads/edit/'.$project->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ url('/admin/leads/delete/'.$project->id) }}" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('/admin/projects/edit/'.$project->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ url('/admin/projects/delete/'.$project->id) }}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
