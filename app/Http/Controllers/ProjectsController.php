@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use \Exception;
 use App\Models\Client;
 use App\Models\Project;
-use Illuminate\Http\Request;
 use App\Http\Requests\AddProjectRequest;
 
 class ProjectsController extends Controller
@@ -27,20 +26,26 @@ class ProjectsController extends Controller
     	$data = $request->validated();
 
         try {
-            $lead = new Project();
-            $lead->name       		= $data['name']; 
-            $lead->client			= $data['client'];
-            $lead->phone      		= $data['phone'];
-            $lead->billing_type		= $data['billing_type'];
-            $lead->status       	= $data['status'];
-            $lead->estimated_time	= $data['estimated_time'];
-            $lead->start_date     	= $data['start_date'];
-            $lead->deadline    		= $data['deadline'];
-            $lead->description 		= $data['description'];
-            $lead->save();
+            $project = new Project();
+            $project->name       		= $data['name']; 
+            $project->client			= $data['client'];
+            $project->phone      		= $data['phone'];
+            $project->billing_type		= $data['billing_type'];
+            $project->status            = $data['status'];
+            $project->estimated_time	= $data['estimated_time'];
+            $project->start_date     	= $data['start_date'];
+            $project->deadline    		= $data['deadline'];
+            $project->description 		= $data['description'];
+            $project->save();
             return redirect('/admin/projects')->with('success', 'Project added successfully!');
         } catch (\Exception $e) {
             return redirect()->back()->with('errors', $e->getMessage());
         }
+    }
+
+    public function editProjectView($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.update-project')->with(compact('project'));
     }
 }
