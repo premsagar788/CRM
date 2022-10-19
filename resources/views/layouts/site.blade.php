@@ -7,8 +7,6 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>@yield('title')</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -34,7 +32,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -50,7 +48,7 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('features') }}">Features</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('pricing') }}">Pricing</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="{{ url('faq') }}">FAQ</a>
-            <a class="py-2 btn btn-primary" href="{{ url('/login') }}">Login</a>
+            <a class="me-3 py-2 btn btn-primary" href="{{ url('/login') }}">Login</a>
           </nav>
         </div>
       </header>
@@ -59,10 +57,96 @@
     <main>
       @yield('content')
         <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2017–2021 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-      </footer>
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fa fa-diamond me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fa fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fa fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fa fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <span class="text-reset fw-bold">Simple CRM</span>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
     </main>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

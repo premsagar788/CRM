@@ -3,8 +3,6 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  /*padding-top: 3rem;*/
-  padding-bottom: 3rem;
   color: #5a5a5a;
 }
 
@@ -97,10 +95,27 @@ body {
     padding-bottom: 30px;
     margin-bottom: 30px;
     color: inherit;
-    background-color: #eee;
+    background-color: #eee; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #3502ff2b , #2aff003d);
 }
 
 i.fa {
     border: 1px solid #00000012;
     padding: 10px;
+}
+
+nav a:hover {
+    border-bottom: 1px solid blue;
+    color: blue !important;
+}
+
+footer {
+  padding-top: 10px;
+  margin-top: 20px;
+      box-shadow: 1px 2px 17px 0px #0000ff2e;
+  /*border-top: 1px solid black;*/
+}
+
+.btn-primary:hover {
+    color: #fff !important;
 }
