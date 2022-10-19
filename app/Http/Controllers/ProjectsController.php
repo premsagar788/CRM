@@ -11,7 +11,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-    	$projects = Project::all();
+    	$projects = Project::all()->pluck('name');
     	return view('admin.projects')->with(compact('projects'));
     }
 
