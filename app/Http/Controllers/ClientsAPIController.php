@@ -13,12 +13,7 @@ class ClientsAPIController extends Controller
     public function index()
     {
     	$clients = Client::all();
-    	return view('admin.clients')->with(compact('clients'));
-    }
-
-    public function addClient()
-    {
-    	return view('admin.addclient');
+    	return $clients;
     }
 
     public function addClientSave(AddClientRequest $request)
@@ -36,18 +31,13 @@ class ClientsAPIController extends Controller
             $client->state      = $data['state'];
             $client->country    = $data['country'];
             $client->save();
-            return redirect('/admin/clients')->with('success', 'Client added successfully!');
+            
+            return $client;
         } catch (\Exception $e) {
-            return redirect()->back()->with('errors', $e->getMessage());
+            return response()->json('Error: ', $e);
         }
     }
-
-    public function editClientView($id)
-    {
-        $client = Client::findOrFail($id);
-        return view('admin.update-client')->with(compact('client'));
-    }
-
+    
     public function editClientSave(UpdateClientRequest $request, $id)
     {
         $data = $request->validated();

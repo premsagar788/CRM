@@ -18,12 +18,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::controller(App\Http\Controllers\AuthAPIController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+
+});
+
 Route::middleware('auth')->prefix('/admin')->group(function () {
-    Route::controller(App\Http\Controllers\ClientsController::class)->prefix('/clients')->group(function () {
+    Route::controller(App\Http\Controllers\ClientsAPIController::class)->prefix('/clients')->group(function () {
         Route::get('/', 'index');
-        Route::get('/add', 'addClient');
         Route::post('/add', 'addClientSave');
-        Route::get('/edit/{id}', 'editClientView');
         Route::post('/update/{id}', 'editClientSave');
         Route::get('/delete/{id}', 'deleteClient');
     });
