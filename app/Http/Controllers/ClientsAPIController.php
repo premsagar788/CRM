@@ -31,12 +31,13 @@ class ClientsAPIController extends Controller
             $client->state      = $data['state'];
             $client->country    = $data['country'];
             $client->save();
+            
             return $client;
         } catch (\Exception $e) {
             return response()->json('Error: ', $e);
         }
     }
-
+    
     public function editClientSave(UpdateClientRequest $request, $id)
     {
         $data = $request->validated();
