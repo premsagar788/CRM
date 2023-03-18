@@ -34,9 +34,24 @@ class AddProjectRequest extends FormRequest
             'billing_type'      => Rule::in($billing_type),
             'status'            => Rule::in($status),
             'estimated_time'    => 'required|string',
-            'start_date'        => 'required|string',
-            'deadline'          => 'required|string',
+            'start_date'        => 'required',
+            'deadline'          => 'required',
             'description'       => 'required|string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required'             => 'Client name is required',
+            'client.required'           => 'Company name is required',
+            'phone.required'            => 'Source is required',
+            'billing_type.required'     => 'Budget is required',
+            'status.required'           => 'Website is required',
+            'estimated_time.required'   => 'Phone number is required',
+            'start_date.required'       => 'Client state is required',
+            'deadline.required'         => 'Client country is required',
+            'description.required'      => 'Description is required'
         ];
     }
 }
