@@ -119,3 +119,9 @@ footer {
 .btn-primary:hover {
     color: #fff !important;
 }
+
+h1.text-black, p.text-black {
+  color: black;
+  background: #ffffff6e;
+  
+}
