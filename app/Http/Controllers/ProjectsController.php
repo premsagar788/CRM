@@ -11,7 +11,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-    	$projects = Project::all()->pluck('name');
+    	$projects = Project::all();
     	return view('admin.projects')->with(compact('projects'));
     }
 
@@ -68,10 +68,10 @@ class ProjectsController extends Controller
         return redirect('/admin/leads')->with('success', 'Project updated successfully!');
     }
 
-    public function deleteLead($id)
+    public function deleteProject($id)
     {
         $project = Project::findOrFail($id);
         $project->delete();
-        return redirect('/admin/leads')->with('success', 'Project deleted successfully!');
+        return redirect('/admin/projects')->with('success', 'Project deleted successfully!');
     }
 }
